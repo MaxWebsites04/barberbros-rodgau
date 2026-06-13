@@ -212,6 +212,10 @@
     .fb2{max-width:var(--mw);margin:0 auto;padding:22px 40px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between;}
     .fcp{font-size:12px;color:var(--dim);}
 
+    /* ── LOGO IMAGE ── */
+    .logo-img{height:54px;width:auto;display:block;filter:brightness(0) invert(1);}
+    .logo-img-f{height:68px;width:auto;display:block;filter:brightness(0) invert(1);opacity:.88;}
+
     /* ── RESPONSIVE ── */
     @media(max-width:1024px){
       .fm{grid-template-columns:1fr 1fr;gap:38px;}
@@ -219,35 +223,91 @@
       .pg{grid-template-columns:1fr;}
     }
     @media(max-width:768px){
-      :root{--spy:68px;}
-      .ctr,.ni{padding:0 24px;}
+      :root{--spy:60px;--nh:68px;}
+      .ctr,.ni{padding:0 20px;}
+      /* Nav */
+      .logo-img{height:42px;}
       .nl{display:none;}
       .nt{display:flex;}
-      .hc{flex-direction:column;align-items:stretch;gap:20px;}
-      .bkc{max-width:100%;min-width:unset;}
+      .btn-amb{font-size:11px;padding:11px 16px;letter-spacing:.09em;}
+      /* Hero */
+      #hero{padding-bottom:36px;padding-top:80px;align-items:flex-start;min-height:100svh;}
+      .hc{flex-direction:column;align-items:stretch;gap:16px;}
+      .bkc{max-width:100%;min-width:unset;padding:24px 20px;}
+      .bkc h2{font-size:1.1rem;margin-bottom:16px;}
       .ht{text-align:left;}
-      .hsb{margin-left:0;max-width:100%;}
-      .si{grid-template-columns:repeat(2,1fr);padding:0 24px;}
+      .hh1{font-size:clamp(2rem,8vw,3rem);}
+      .hsb{margin-left:0;max-width:100%;font-size:13px;}
+      /* Stats */
+      .si{grid-template-columns:repeat(2,1fr);padding:0 20px;}
+      .st{padding:20px 14px;}
+      .sv{font-size:1.25rem;}
       .st:nth-child(2){border-right:none;}
       .st:nth-child(3){border-right:1px solid rgba(255,255,255,.22);border-top:1px solid rgba(255,255,255,.22);}
       .st:nth-child(4){border-top:1px solid rgba(255,255,255,.22);}
-      .ag{grid-template-columns:1fr;}
+      /* About */
+      .ag{grid-template-columns:1fr;gap:36px;}
+      /* Services */
       .sg{grid-template-columns:repeat(2,1fr);}
+      /* Prices */
+      .pg{grid-template-columns:1fr;}
+      /* Gallery */
       .gg{grid-template-columns:1fr 1fr;}
       .gi:first-child{grid-row:span 1;grid-column:span 2;}
-      .gi:first-child img{min-height:260px;}
-      .gi:not(:first-child) img{height:200px;}
+      .gi:first-child img{min-height:240px;}
+      .gi:not(:first-child) img{height:190px;}
+      /* Team */
       .tg{grid-template-columns:1fr;}
+      /* Reviews */
       .rvg{grid-template-columns:1fr;}
+      /* Kontakt */
       .kg{grid-template-columns:1fr;}
-      .fm{grid-template-columns:1fr;gap:30px;padding:46px 24px 30px;}
-      .fb2{flex-direction:column;gap:16px;text-align:center;padding:22px 24px;}
+      .mc2{height:300px;}
+      /* Misc */
+      .sec-hdr{margin-bottom:40px;}
+      /* Footer */
+      .fm{grid-template-columns:1fr;gap:28px;padding:40px 20px 24px;}
+      .fb2{flex-direction:column;gap:14px;text-align:center;padding:20px;}
+      .logo-img-f{height:56px;}
     }
     @media(max-width:480px){
-      .sg{grid-template-columns:1fr;}
+      :root{--nh:60px;}
+      .ni{padding:0 14px;}
+      .ctr{padding:0 16px;}
+      .logo-img{height:36px;}
+      /* Compact nav CTA */
+      .btn-amb{font-size:10px;padding:10px 12px;letter-spacing:.07em;}
+      /* Hero */
+      #hero{padding-top:68px;padding-bottom:28px;}
+      .hh1{font-size:1.85rem;line-height:1.0;}
+      .hbr{font-size:10px;}
+      .hsb{display:none;}
+      .bkc{padding:18px 14px;}
+      .bkc h2{font-size:1rem;margin-bottom:12px;}
+      .fi{padding:10px 12px;font-size:13px;}
+      .bs{padding:12px;font-size:11px;}
+      /* Stats */
+      .si{padding:0 14px;}
+      .st{padding:16px 10px;}
+      .sv{font-size:1.1rem;}
+      .sl{font-size:9.5px;}
+      /* Services: keep 2-col */
+      .sg{grid-template-columns:repeat(2,1fr);}
+      .svc{padding:22px 12px;gap:10px;}
+      .siw{width:44px;height:44px;}
+      .siw svg{width:18px;height:18px;}
+      .sn{font-size:10.5px;}
+      /* Gallery */
       .gg{grid-template-columns:1fr;}
       .gi:first-child{grid-column:span 1;}
-      .hh1{font-size:2.3rem;}
+      .gi:first-child img{min-height:220px;}
+      /* Reviews */
+      .rvq{font-size:14px;line-height:1.65;}
+      /* Mobile menu */
+      .mm a{font-size:1.65rem;}
+      .mm{gap:22px;}
+      /* Section title */
+      .sec-ttl{font-size:clamp(1.6rem,6vw,2.2rem);}
     }
     input[type="datetime-local"]::-webkit-calendar-picker-indicator{filter:invert(1) opacity(.4);}
     input[type="datetime-local"]::-webkit-calendar-picker-indicator:hover{filter:invert(1) opacity(.8);}
@@ -259,38 +319,7 @@
 <header id="nb" role="banner">
   <div class="ni">
     <a href="#hero" aria-label="Barber Bro's – zur Startseite">
-      <svg width="130" height="82" viewBox="0 0 130 82" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="2" y="13" font-family="DM Sans,sans-serif" font-size="7" fill="white" letter-spacing="1.5" font-weight="500" opacity=".75">SINCE</text>
-        <line x1="2" y1="16.5" x2="40" y2="16.5" stroke="white" stroke-width=".6" opacity=".45"/>
-        <text x="88" y="13" font-family="DM Sans,sans-serif" font-size="7" fill="white" letter-spacing="1.5" font-weight="500" opacity=".75">2023</text>
-        <line x1="88" y1="16.5" x2="128" y2="16.5" stroke="white" stroke-width=".6" opacity=".45"/>
-        <!-- Bun -->
-        <ellipse cx="65" cy="6.5" rx="5.5" ry="5" fill="white"/>
-        <rect x="59.5" y="5.5" width="11" height="9" fill="white"/>
-        <!-- Face -->
-        <ellipse cx="65" cy="29" rx="14.5" ry="15.5" fill="white"/>
-        <!-- Eyes -->
-        <ellipse cx="59" cy="26" rx="2" ry="2" fill="#1C1612"/>
-        <ellipse cx="71" cy="26" rx="2" ry="2" fill="#1C1612"/>
-        <!-- Eyebrows -->
-        <path d="M55.5 22 Q59 20.2 62.5 22" stroke="#1C1612" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-        <path d="M67.5 22 Q71 20.2 74.5 22" stroke="#1C1612" stroke-width="1.3" fill="none" stroke-linecap="round"/>
-        <!-- Mustache -->
-        <path d="M57.5 34 Q61.2 32.2 65 34 Q68.8 32.2 72.5 34 L65 35.5 Z" fill="#1C1612"/>
-        <!-- Beard -->
-        <path d="M51 37 Q52 50 65 54 Q78 50 79 37 Q73.5 46 65 47 Q56.5 46 51 37Z" fill="#1C1612"/>
-        <!-- Scissors L blade -->
-        <line x1="12" y1="22" x2="57" y2="50" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
-        <circle cx="6" cy="48" r="6.5" stroke="white" stroke-width="1.9" fill="none"/>
-        <circle cx="11" cy="57" r="6.5" stroke="white" stroke-width="1.9" fill="none"/>
-        <!-- Scissors R blade -->
-        <line x1="118" y1="22" x2="73" y2="50" stroke="white" stroke-width="2.4" stroke-linecap="round"/>
-        <circle cx="124" cy="48" r="6.5" stroke="white" stroke-width="1.9" fill="none"/>
-        <circle cx="119" cy="57" r="6.5" stroke="white" stroke-width="1.9" fill="none"/>
-        <!-- Text -->
-        <text x="65" y="71" font-family="Georgia,serif" font-size="12.5" font-weight="700" fill="white" text-anchor="middle" letter-spacing="1.5">BARBER BRO'S</text>
-        <text x="65" y="80" font-family="DM Sans,sans-serif" font-size="5.8" fill="white" text-anchor="middle" letter-spacing="3.2" opacity=".75">PREMIUM HAIR CUT</text>
-      </svg>
+      <img src="logo.png" alt="Barber Bro's Rodgau Logo" class="logo-img">
     </a>
     <nav aria-label="Hauptnavigation">
       <ul class="nl">
@@ -674,27 +703,7 @@
 <footer>
   <div class="fm">
     <div>
-      <svg width="110" height="70" viewBox="0 0 130 82" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="2" y="13" font-family="DM Sans,sans-serif" font-size="7" fill="white" letter-spacing="1.5" font-weight="500" opacity=".6">SINCE</text>
-        <line x1="2" y1="16.5" x2="40" y2="16.5" stroke="white" stroke-width=".6" opacity=".35"/>
-        <text x="88" y="13" font-family="DM Sans,sans-serif" font-size="7" fill="white" letter-spacing="1.5" font-weight="500" opacity=".6">2023</text>
-        <line x1="88" y1="16.5" x2="128" y2="16.5" stroke="white" stroke-width=".6" opacity=".35"/>
-        <ellipse cx="65" cy="6.5" rx="5.5" ry="5" fill="white" opacity=".9"/>
-        <rect x="59.5" y="5.5" width="11" height="9" fill="white" opacity=".9"/>
-        <ellipse cx="65" cy="29" rx="14.5" ry="15.5" fill="white" opacity=".9"/>
-        <ellipse cx="59" cy="26" rx="2" ry="2" fill="#1C1612"/>
-        <ellipse cx="71" cy="26" rx="2" ry="2" fill="#1C1612"/>
-        <path d="M57.5 34 Q61.2 32.2 65 34 Q68.8 32.2 72.5 34 L65 35.5 Z" fill="#1C1612"/>
-        <path d="M51 37 Q52 50 65 54 Q78 50 79 37 Q73.5 46 65 47 Q56.5 46 51 37Z" fill="#1C1612"/>
-        <line x1="12" y1="22" x2="57" y2="50" stroke="white" stroke-width="2.4" stroke-linecap="round" opacity=".9"/>
-        <circle cx="6" cy="48" r="6.5" stroke="white" stroke-width="1.9" fill="none" opacity=".9"/>
-        <circle cx="11" cy="57" r="6.5" stroke="white" stroke-width="1.9" fill="none" opacity=".9"/>
-        <line x1="118" y1="22" x2="73" y2="50" stroke="white" stroke-width="2.4" stroke-linecap="round" opacity=".9"/>
-        <circle cx="124" cy="48" r="6.5" stroke="white" stroke-width="1.9" fill="none" opacity=".9"/>
-        <circle cx="119" cy="57" r="6.5" stroke="white" stroke-width="1.9" fill="none" opacity=".9"/>
-        <text x="65" y="71" font-family="Georgia,serif" font-size="12.5" font-weight="700" fill="white" text-anchor="middle" letter-spacing="1.5" opacity=".9">BARBER BRO'S</text>
-        <text x="65" y="80" font-family="DM Sans,sans-serif" font-size="5.8" fill="white" text-anchor="middle" letter-spacing="3.2" opacity=".6">PREMIUM HAIR CUT</text>
-      </svg>
+      <img src="logo.png" alt="Barber Bro's Rodgau Logo" class="logo-img-f">
       <p class="fbt">Premium Barbershop in Rodgau seit 2023. Wo Tradition auf modernen Stil trifft.</p>
     </div>
     <div>
